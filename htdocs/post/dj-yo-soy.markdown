@@ -1,0 +1,14 @@
+---
+author: admin
+comments: true
+date: 2011-01-04 17:42:14
+layout: post
+slug: dj-yo-soy
+title: DJ Yo Soy
+wordpress_id: 114
+categories:
+- Education
+- Sound
+---
+
+Been digging into the realm of sound/music composition, with [Psycle](http://en.wikipedia.org/wiki/Psycle) and, courtesy of [@notch](http://twitter.com/notch/status/21243231756886017) I've found a tool to make [simple sound effect](http://www.drpetter.se/project_sfxr.html)s. I've been prepping by listening to [Midnite Vultures](http://www.youtube.com/watch?v=VXEWMNBACko) and [Ninja Gaiden Chiptunes](http://ocremix.org/game/134/ninja-gaiden-nes). Also, [this Willie Bobo song](http://www.youtube.com/watch?v=oJ7ZHTLf4Og) which might seem unrelated at a cursory glance. I could easily see this turning into an unhealthy obsession.
