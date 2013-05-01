@@ -1,0 +1,70 @@
+<html>
+<div id = "container">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Joseph Baldwin Resume Page</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<div class = "content">
+
+<h1>Crypto LabelMaker – Computer Security</h1>
+<p class="MsoNormal">This was a client/server program involving a 
+password-sharing scheme. The key required to digitally sign a message could only 
+be constructed when three of the generated passwords were present. </p>
+<p class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp; The passwords were generated using a threshold scheme 
+(A. Shamir, “How to share a secret” <i>Communications of the ACM ,v. 24, n.11 
+Nov 1979</i>). We wish for the key to be constructed using three passwords so we 
+used a polynomial of degree 2 (3-1 = 2).</p>
+<p class="MsoNormal"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; password = f(x) = (ax^2 +bx 
++ M) mod P</b></p>
+<p class="MsoNormal"><b>P</b> a prime, <b>M</b> the key, and <b>a</b> and <b>b</b>,<b>
+</b>are all chosen at random. <b>P</b> is kept, <b>M</b>, <b>a</b> and <b>b</b> 
+are discarded afterwards. Evaluating the polynomial at different points 
+generates “partial” passwords. To reconstruct the key, <b>M</b>, the set of 3 
+equations were solved through polynomial interpolation to give back <b>a</b> and
+<b>b</b>, in which then <b>M</b> could be determined.</p>
+<p class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp; After the passwords are generated initially, a public 
+key (server side) would also be generated, and distributed along with the 
+individual passwords. To reconstruct the key, each user would run the client 
+program and enter their password. When three keys were entered, the original key 
+would be reconstructed. An arbitrary message would be encrypted using an RSA 
+scheme with the private key and then would be used as a digital signature on a 
+document. Should the authenticity of the signature come into question, the 
+public key would be used to decrypt it and the result would match the original 
+message.&nbsp; </p>
+<p class="MsoNormal">
+
+
+
+</div>
+
+		<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7711572-16']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script> 
+
+</body>
+
+<div id = "menu">
+<ul>
+<p><li> <a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main</a> </li></p>
+<p><li> <a href="webdevelopment.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web Development </a> </li></p>
+<p><li> <a href="softwarecrypto.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Development and Cryptology </a> </li></p>
+<p><li> <a href="animationflash.htm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flash and Computer Animation </a> </li></p>
+</ul>
+<div>
+
+</div>
+</html>

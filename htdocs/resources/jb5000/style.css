@@ -1,0 +1,145 @@
+a {
+
+text-decoration:none;
+border-bottom: 1px dotted; 
+}
+a:link {color:blue;
+text-decoration: none;}
+a:visited {color:purple
+text-decoration: none;}
+a:hover {background-color:yellow;
+}
+
+
+head, body, #container, .content, #menu 
+{
+font-family: arial;
+font-color: black;
+}
+
+head
+{
+
+
+}
+
+h1
+{
+font-size: 14 pt;
+font-color: blue;
+}
+
+
+body
+{letter-spacing: 1px;
+line-height:20px;
+margin: 0;
+background: url("lgren059.jpe") repeat; 
+
+background-attachment:fixed
+}
+
+
+#container
+{
+margin:0;
+height: 900px;
+
+
+}
+
+
+
+
+.content
+{
+    position:relative; /* Position is declared "relative" to gain control of stacking order (z-index). */
+	width:auto;
+	min-width:120px;
+	top: 20px;
+	left: 75 px;
+	margin:0px 210px 20px 170px;
+	border:1px solid black;
+	background-color:white;
+	padding:10px;
+	z-index:3; /* This allows the content to overlap the right menu in narrow windows in good browsers. */
+}
+
+
+
+#menu a
+{
+font-size: 8pt;
+text-decoration: none;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 10px;
+z-index: 10;
+border-bottom:none;
+
+display: block;
+}
+#menu ul
+{
+
+list-style-type: none;
+}
+#menu li
+{
+background: url("images/button_link.gif") top left no-repeat;
+
+margin-top: 5px;
+border-bottom: 1px solid black;
+}
+
+
+#menu a{
+margin-left: 0;
+padding: 10px;
+
+
+
+}
+#Menu a:link
+{
+
+text-decoration: none;
+
+}
+
+#Menu a:visited
+{
+
+text-decoration: none;
+
+}
+
+#Menu a:hover
+{
+
+background: url("images/button_hover.gif") top left no-repeat;
+
+color: orange;
+text-decoration: none;
+}
+
+#Menu {
+	position:absolute;
+	width:150px;
+	top:20px;
+	left:20px;
+	border:1px solid black;
+	background-color:white;
+	padding:10px;
+	padding-left:0px;
+	z-index:2;
+
+/* Here is the ugly brilliant hack that protects IE5/Win from its own stupidity. 
+Thanks to Tantek Celik for the hack and to Eric Costello for publicizing it. 
+IE5/Win incorrectly parses the "\"}"" value, prematurely closing the style 
+declaration. The incorrect IE5/Win value is above, while the correct value is 
+below. See http://glish.com/css/hacks.asp for details. */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width:200 px;
+	}

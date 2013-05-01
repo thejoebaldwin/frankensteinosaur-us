@@ -1,0 +1,70 @@
+<html>
+<div id = "container">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Joseph Baldwin Resume Page</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<div class = "content">
+
+<h1>CRR – Software Engineering / Independent Study</h1>
+<p class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp; The goal of this project was to implement the Chinese 
+Remainder Representation (CRR) in such a way that adding (or subtracting, etc.) 
+two very large numbers could be done in a single, parallel operation, thereby 
+greatly decreasing the time it takes to do such things like mathematical 
+operations in cryptography.</p>
+<p class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp; The Chinese Remainder Representation is a way of 
+representing a number using an array of remainders. An array of prime numbers 
+larger than 5 are used as moduli, the length of the array depending on the size 
+of the largest number you wish to represent. Each CRR number will be an array of 
+equal length, with each corresponding remainder in the CRR being the result of 
+the original number modulo its corresponding prime. Addition, subtraction, and 
+multiplication can all be done on these CRR’s as you would on any integer 
+(division is a bit different and a subject of a 60-page paper). So, if CRR_1, 
+CRR_2, and CRR_3 are arrays of remainders, CRR_3=CRR_1 + CRR_2 would entail….</p>
+<p class="MsoNormal">CRR_3[0] = CRR_1[0] + CRR_2[0]</p>
+<p class="MsoNormal">CRR_3[1] = CRR_1[1] + CRR_2[1]</p>
+<p class="MsoNormal"><b>. . .</b></p>
+<p class="MsoNormal">CRR_3[n] = CRR_1[n] + CRR_2[n]</p>
+<p class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp; The first stage of this project was to take an 
+existing software package and get it to compile with the most current version of 
+C++ and a new large number package, ln3. After the project was functional and 
+correctness was verified, the package was implemented to work across many 
+parallel machines (as many machines as remainders), using MPICH. This involved 
+sending a remainder and a remainder, or a remainder and a long, with a flag to 
+designate which operation would be performed. At the parallel machines the 
+operation would be performed and the resulting remainder would be returned. </p>
+
+
+</div>
+
+
+		<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7711572-16']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script> 
+</body>
+
+<div id = "menu">
+<ul>
+<p><li> <a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main</a> </li></p>
+<p><li> <a href="webdevelopment.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web Development </a> </li></p>
+<p><li> <a href="softwarecrypto.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Development and Cryptology </a> </li></p>
+<p><li> <a href="animationflash.htm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flash and Computer Animation </a> </li></p>
+</ul>
+<div>
+
+</div>
+</html>

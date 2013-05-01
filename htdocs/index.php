@@ -14,7 +14,7 @@ $twig = new Twig_Environment($loader, array(
 ));
 
 
-  $sql = "SELECT * FROM post;";
+  $sql = "SELECT * FROM post ORDER BY created DESC LIMIT 5;";
   $db = new Database();
   $result  = $db->Query($sql);
    
