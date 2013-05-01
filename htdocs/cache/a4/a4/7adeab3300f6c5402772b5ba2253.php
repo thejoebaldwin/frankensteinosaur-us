@@ -36,11 +36,14 @@ class __TwigTemplate_a4a47adeab3300f6c5402772b5ba2253 extends Twig_Template
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 7
             echo "    
-    <h1>";
+    <h1><a href='/post/";
             // line 8
             if (isset($context["post"])) { $_post_ = $context["post"]; } else { $_post_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_post_, "path"), "html", null, true);
+            echo "'>";
+            if (isset($context["post"])) { $_post_ = $context["post"]; } else { $_post_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_post_, "title"), "html", null, true);
-            echo "</h1>
+            echo "</a></h1>
     <br/>
     ";
             // line 10

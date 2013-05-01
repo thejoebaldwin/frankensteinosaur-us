@@ -5,7 +5,7 @@
     
        {%    for post in posts  %}
     
-    <h1>{{ post.title }}</h1>
+    <h1><a href='/post/{{  post.path }}'>{{ post.title }}</a></h1>
     <br/>
     {{ post.contents | raw}}
               </div>

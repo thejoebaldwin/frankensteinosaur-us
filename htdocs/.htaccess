@@ -1,5 +1,7 @@
 RewriteEngine On
 RewriteOptions Inherit 
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond  %{REQUEST_URI} post(.*)
-RewriteRule post/(.*) /content.php/$1 [L] 
+#RewriteCond  %{REQUEST_URI} post(.*)
+#RewriteRule post/(.*) /content.php/$1 [L] 
+RewriteCond  %{REQUEST_URI} !controller.php
+RewriteRule (.*) /controller.php/$1 [L] 
