@@ -9,14 +9,12 @@
   <title>Frankensteinosaur.us</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
- 
-<link rel="stylesheet" href="/css/reset.css" />
-<link rel="stylesheet" href="/css/text.css" />
-<link rel="stylesheet" href="/css/960_24_col.css" />
-
-
- <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/text.css" />
+  <link rel="stylesheet" href="/css/960_24_col.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
+
 <body>
  <header>
 
@@ -25,9 +23,9 @@
 <div class="grid_5" id="left">
 		<div class='name' id='h'><a href='/'>Joe Baldwin</a></div>
   		       <ul>  
-		          <li><a href='#'>Tag 1</a></li>
-		          <li><a href='#'>Tag 2</a></li>
-		          <li><a href='#'>Tag 3</a></li>
+		           {%    for tag in tags  %}
+              <li><a href='/tag/{{tag}}'>{{tag}}</a></li>
+          {% endfor %}
 		      </ul>  </div>
   <!-- end .grid_5 -->
   <div class="grid_19" class='text-align:left;' >

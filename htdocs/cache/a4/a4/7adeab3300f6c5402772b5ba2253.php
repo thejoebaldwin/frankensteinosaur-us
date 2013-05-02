@@ -49,14 +49,35 @@ class __TwigTemplate_a4a47adeab3300f6c5402772b5ba2253 extends Twig_Template
             if (isset($context["post"])) { $_post_ = $context["post"]; } else { $_post_ = null; }
             echo $this->getAttribute($_post_, "contents");
             echo "
-     </div>
+                        <br/>
+                            ";
+            // line 11
+            if (isset($context["tags"])) { $_tags_ = $context["tags"]; } else { $_tags_ = null; }
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable($_tags_);
+            foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+                // line 12
+                echo "              <a href='/tag/";
+                if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
+                echo twig_escape_filter($this->env, $_tag_, "html", null, true);
+                echo "'>";
+                if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
+                echo twig_escape_filter($this->env, $_tag_, "html", null, true);
+                echo "</a> |
+          ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+            $context = array_merge($_parent, array_intersect_key($context, $_parent));
+            // line 14
+            echo "     </div>
  
  ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 13
+        // line 17
         echo "
 ";
     }

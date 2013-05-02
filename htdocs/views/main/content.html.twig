@@ -3,7 +3,14 @@
 {% block content %}
  <div id="content" class="content">
      <div>
+        <h1>{{ post.title }}</h1>
         {{ html|raw }}
+        <div>
+          {%    for tag in post.tags  %}
+              <a href='/tag/{{tag}}'>{{tag}}</a> |
+          {% endfor %}
+            
+        </div>
      </div>
  </div> 
 

@@ -7,6 +7,10 @@
      <div id="content">
    		 <h1><a href='/post/{{  post.path }}'>{{ post.title }}</a></h1>
    		    			{{ post.contents | raw}}
+                        <br/>
+                            {%    for tag in tags  %}
+              <a href='/tag/{{tag}}'>{{tag}}</a> |
+          {% endfor %}
      </div>
  
  {% endfor %}

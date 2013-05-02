@@ -42,10 +42,27 @@ class __TwigTemplate_6400a66826d0d78aa016e7cf0c4600de extends Twig_Template
 <div class=\"grid_5\" id=\"left\">
 \t\t<div class='name' id='h'><a href='/'>Joe Baldwin</a></div>
   \t\t       <ul>  
-\t\t          <li><a href='#'>Tag 1</a></li>
-\t\t          <li><a href='#'>Tag 2</a></li>
-\t\t          <li><a href='#'>Tag 3</a></li>
-\t\t      </ul>  </div>
+\t\t           ";
+        // line 28
+        if (isset($context["tags"])) { $_tags_ = $context["tags"]; } else { $_tags_ = null; }
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($_tags_);
+        foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+            // line 29
+            echo "              <li><a href='/tag/";
+            if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
+            echo twig_escape_filter($this->env, $_tag_, "html", null, true);
+            echo "'>";
+            if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
+            echo twig_escape_filter($this->env, $_tag_, "html", null, true);
+            echo "</a></li>
+          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 31
+        echo "\t\t      </ul>  </div>
   <!-- end .grid_5 -->
   <div class=\"grid_19\" class='text-align:left;' >
        ";
@@ -93,4 +110,8 @@ pageTracker._trackPageview();
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
 }
