@@ -1,18 +1,15 @@
 <?php
-
-require_once('lib/Twig/Autoloader.php');
-require_once('class.database.php');
-require_once('class.post.php');
-include_once "markdown.php";
-
-Twig_Autoloader::register();
-
+  require_once('lib/Twig/Autoloader.php');
+  require_once('class.database.php');
+  require_once('class.post.php');
+  include_once "markdown.php";
+  Twig_Autoloader::register();
+  
   function postAction($twig, $words)
   {
     $path = $words[count($words) - 1];
     $text = file_get_contents('./post/' . $path . '.markdown', true);
     $html =  Markdown($text);
-    
     
     $sql = "SELECT * FROM post WHERE path = '" . $path . "';";
     $db = new Database();
@@ -27,7 +24,9 @@ Twig_Autoloader::register();
         $html =  Markdown($text);
         $post->contents = $html;
     }
-    echo $twig->render('main/content.html.twig', array('name' => '', 'title' => 'Startpage', 'html' => $html, 'post' => $post, 'tags' => getTags()));
+    echo $twig->render('main/content.html.twig', array('html' => $html,
+                                                       'post' => $post,
+                                                       'tags' => getTags()));
   }
   
   function getTags()
@@ -57,7 +56,13 @@ Twig_Autoloader::register();
         array_push($posts, $post);
         $count++;
     }
-    echo $twig->render('main/index.html.twig', array('name' => '', 'title' => 'Startpage', 'posts'=>$posts, 'tags' => getTags()));
+    $next_index = intval($index) + 1;
+    $previous_index = intval($index) - 1;
+    echo $twig->render('main/index.html.twig', array('posts' => $posts,
+                                                     'next_index' => $next_index,
+                                                     'action' => '/',
+                                                     'previous_index' => $previous_index,
+                                                     'tags' => getTags()));
   }
   
   function tagAction($twig, $words, $index)
@@ -91,7 +96,13 @@ Twig_Autoloader::register();
         array_push($posts, $post);
         $count++;
     }
-    echo $twig->render('main/index.html.twig', array('name' => '', 'title' => 'Startpage', 'posts'=>$posts, 'tags' => getTags()));
+    $next_index = intval($index) + 1;
+    $previous_index = intval($index) - 1;
+    echo $twig->render('main/index.html.twig', array('posts'=> $posts,
+                                                     'next_index' => $next_index,
+                                                     'action' => 'tag/' . $tag,
+                                                     'previous_index' => $previous_index,
+                                                     'tags' => getTags()));
   }
 
   function goController()
@@ -127,13 +138,6 @@ Twig_Autoloader::register();
         }
     }
   }
-  
-  
-  
-  
-  
   goController();
-
-
 
 ?>
