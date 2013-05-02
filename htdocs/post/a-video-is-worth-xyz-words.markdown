@@ -1,13 +1,1 @@
----
-author: admin
-comments: true
-date: 2013-01-13 21:41:16
-layout: post
-slug: a-video-is-worth-xyz-words
-title: A Video is worth XYZwords
-wordpress_id: 605
-categories:
-- Blog Meta
----
-
 My intent was to go back and add an explanation to these videos; maybe a link to the code in github, how the idea came about or some things I would like to improve on. BUT. It's the start of the semester tomorrow and I'll be distracted by something newer and shinier. This past year has been less blogging and more generating code on github and content on youtube. I like to write, but some of the things I've been working on just show better when you can see them move. The online lectures have been new to me as well; still not thrilled at the sound of my voice.. should probably look into hiring some vocal talent. NOW ON TO YEAR SIX.

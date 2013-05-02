@@ -20,7 +20,7 @@ Twig_Autoloader::register();
   
   function homeAction($twig)
   {
-    $sql = "SELECT * FROM post ORDER BY created DESC LIMIT 5;";
+    $sql = "SELECT * FROM post WHERE published = 1 ORDER BY created DESC LIMIT 5;";
     $db = new Database();
     $result  = $db->Query($sql);
     $count = 0;
@@ -41,7 +41,7 @@ Twig_Autoloader::register();
   
     function tagAction($twig, $words)
     {
-    $sql = "SELECT * FROM post ORDER BY created DESC LIMIT 5;";
+    $sql = "SELECT * FROM post WHERE published = 1 ORDER BY created DESC LIMIT 5;";
     $db = new Database();
     $result  = $db->Query($sql);
     $count = 0;
@@ -68,7 +68,7 @@ Twig_Autoloader::register();
         ));
     $words = explode('/', $_SERVER['REQUEST_URI']);
     $words_count = count($words);
-    echo("Words Count:" . $words_count);
+    //echo("Words Count:" . $words_count);
     
     if ($words[count($words) - 2] == 'post') {
           postAction($twig,$words);

@@ -1,15 +1,14 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
- <div id="content">
+
     
        {%    for post in posts  %}
-    
-    <h1><a href='/post/{{  post.path }}'>{{ post.title }}</a></h1>
-    <br/>
-    {{ post.contents | raw}}
-              </div>
- <br/>
+     <div id="content">
+   		 <h1><a href='/post/{{  post.path }}'>{{ post.title }}</a></h1>
+   		    			{{ post.contents | raw}}
+     </div>
+ 
  {% endfor %}
 
 {% endblock %}

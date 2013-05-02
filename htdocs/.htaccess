@@ -4,4 +4,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteCond  %{REQUEST_URI} post(.*)
 #RewriteRule post/(.*) /content.php/$1 [L] 
 RewriteCond  %{REQUEST_URI} !controller.php
+RewriteCond  %{REQUEST_URI} !/css
+RewriteCond  %{REQUEST_URI} !/resources
 RewriteRule (.*) /controller.php/$1 [L] 
