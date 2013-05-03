@@ -13,17 +13,38 @@
   <link rel="stylesheet" href="/css/text.css" />
   <link rel="stylesheet" href="/css/960_24_col.css" />
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="/css/bootstrap-responsive.css" type="text/css" media="all" />
+  <title>Sterts - Home</title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <script src="/js/jquery-1.7.2.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    /*
+    body {
+        background-image: url('/images/photo.png');
+        background-size: 700px 700px;
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+    }
+    #content
+    {
+        padding:7px;
+        background-color:white;
+    }
+    */
+   </style>
 </head>
-
 <body>
- <header>
-
-  </header>
-<div class="container_24">
-<div class="grid_5" id="left">
-		<div class='name' id='h'><a href='/'>Joe Baldwin</a></div>
-            <div>
-         
+    <header>
+    </header>
+    <div class="container_24">
+    <div class="grid_5" id="left" style='text-align:right;'>
+		<div class='name' id='h'><a href='/'>Joe Baldwin</a>
+            <span>Dirty Polymath</span>
+        </div>
+        <br/>
+        <div style='text-align:right;'>
             <a target="_blank" href="http://twitter.com/thejoebaldwin"><img src="/images/Twitter-icon.png"></a>
             <a target="_blank" href="http://www.facebook.com/pages/Humboldt-Technology-Group-LLC/89789096791?ref=ts"><img src="/images/FaceBook-icon.png"></a>
             <a href="http://www.linkedin.com/in/thejoebaldwin" target="_blank"><img src="/images/linkedin_32.png"></a>
@@ -31,68 +52,38 @@
             <a href="http://www.youtube.com/baldwinjoe1" target="_blank"><img src="/images/youtube.png"></a>
             <a href="http://itunes.apple.com/us/artist/humboldt-technology-group/id427924873" target="_blank"><img src="/images/apps_32.png"></a>
             <a href="http://github.com/thejoebaldwin" alt="Github"><img src="/images/git_32.png"></a>
-         
-      
-</div>
-  		       <ul>  
+        </div>
+        <div style='text-align:right;margin-top:10px;'>
 		           {%    for tag in tags  %}
-              <li><a href='/tag/{{tag}}'>{{tag}}</a></li>
+              <a href='/tag/{{tag}}'>{{tag}}</a>
+
           {% endfor %}
-		      </ul>  </div>
-  <!-- end .grid_5 -->
-  <div class="grid_19" class='text-align:left;' >
-       <div class="grid_19" style='text-align:right;'  >
-           {% set current_index = previous_index + 1 %}
-           {% set range_index = current_index - 5 %}
-            {% if current_index < 0 %}
-                {% set current_index = 0 %}
-           {% endif %}
-           {% if range_index < 0 %}
-                {% set range_index = 0 %}
-           {% endif %}
-            {% for i in range_index..(range_index + 10) %}
-               {% if i <= 22 %}
-                  {% if i == current_index %}
-                      <div class="grid_1"  style='text-align:center;border-style:solid;border-color:red;border-width:1px;'>
-                  {% else %}
-                      <div class="grid_1"  style='text-align:center;background-color:red;color:white;'>
-                  {% endif %}
-                  {%  if action != '/' %}
-                          <a href='/{{ action }}/{% if i > 0%}{{ i }}{% endif %}'>{{ i }}</a>
-                  {% else  %}
-                          <a href='/{% if i > 0%}{{ i }}{% endif %}'>{{ i + 1 }}</a>
-                  {%  endif  %}
-                     </div>
-              {% endif %}
-           {% endfor %}
-      </div>
+		      
+        </div>
+    </div>
+    <!-- end .grid_5 -->
+    <div class="grid_19" class='text-align:left;' >
+       {% include 'paging.html.twig' %}
        {% block content %}
         <div id="content">
             Content of the page...
         </div>
-      {% endblock %}
-
+       {% endblock %}
+       {% include 'paging.html.twig' %}
     </div>
-  
-  <!-- end .grid_19 -->
-  <div class="clear"></div>
-</div>
+    <!-- end .grid_19 -->
+    <div class="clear"></div>
 
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
-    
-
-
-  <footer>
-     
-  </footer>
+ <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<footer>
+</footer>
  <script type="text/javascript"> 
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script> 
 <script type="text/javascript"> 
 try {
-var pageTracker = _gat._getTracker("UA-7711572-6");
+var pageTracker = _gat._getTracker("UA-7711572-16");
 pageTracker._trackPageview();
 } catch(err) {}</script> 
 </body>

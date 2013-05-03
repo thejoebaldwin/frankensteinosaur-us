@@ -1,0 +1,37 @@
+    {% if action != 'post' %}
+    <div class="grid_19 btn-group" style='text-align:left; margin-top:20px;margin-bottom:20px;'  >
+            {% if page.start_page > 1 %}
+                 {% if action == '/' %}
+                    <a class='btn' href='/{{ page.current_page - 1 }}'>&#171;</a>
+                {% else %}
+                   <a class='btn' href='/{{ action }}/{{ page.current_page - 1 }}'>&#171;</a>
+                {% endif %}
+            {% endif %}
+            {% for i in page.start_page..page.end_page %}
+            {% if i == page.current_page %}
+                {% if action == '/' %}
+                    <a class='btn btn-info' href='/{{ i }}'>{{ i }}</a>
+                {% else %}
+                   <a class='btn btn-info' href='/{{ action }}/{{ i + 1 }}'>{{ i + 1 }}</a>
+                {% endif %}
+            {% else %}    
+                {% if action == '/' %}
+                    <a class='btn' href='/{{ i }}'>{{ i }}</a>
+                {% else %}
+                   <a class='btn' href='/{{ action }}/{{ i + 1 }}'>{{ i + 1 }}</a>
+                {% endif %} 
+            {% endif %}
+            {% if loop.last %}
+                {% if page.page_count > 1 %}
+                    {% if page.end_page != page.page_count - 1 %}
+                        {% if action == '/' %}
+                            <a class='btn' href='/{{ page.current_page + 1 }}'>&#187;</a>
+                        {% else %}
+                           <a class='btn' href='/{{ page.current_page + 1 }}'>&#187;</a>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endif  %}
+           {% endfor %}
+      </div>
+     {% endif %}
