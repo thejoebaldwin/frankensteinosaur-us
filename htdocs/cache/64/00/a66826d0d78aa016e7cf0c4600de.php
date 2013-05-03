@@ -70,15 +70,18 @@ class __TwigTemplate_6400a66826d0d78aa016e7cf0c4600de extends Twig_Template
             <a href=\"http://itunes.apple.com/us/artist/humboldt-technology-group/id427924873\" target=\"_blank\"><img src=\"/images/apps_32.png\"></a>
             <a href=\"http://github.com/thejoebaldwin\" alt=\"Github\"><img src=\"/images/git_32.png\"></a>
         </div>
+      
+            <iframe height=\"70px\" width=\"150px\" scrolling=\"no\" src='http://sterts.humboldttechgroup.com/thejoebaldwin/last'></iframe>
+            
+      
         <div style='text-align:right;margin-top:10px;'>
-  \t\t    
 \t\t           ";
-        // line 58
+        // line 61
         if (isset($context["tags"])) { $_tags_ = $context["tags"]; } else { $_tags_ = null; }
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($_tags_);
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 59
+            // line 62
             echo "              <a href='/tag/";
             if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
             echo twig_escape_filter($this->env, $_tag_, "html", null, true);
@@ -92,22 +95,22 @@ class __TwigTemplate_6400a66826d0d78aa016e7cf0c4600de extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 62
+        // line 65
         echo "\t\t      
         </div>
     </div>
     <!-- end .grid_5 -->
     <div class=\"grid_19\" class='text-align:left;' >
        ";
-        // line 67
+        // line 70
         $this->env->loadTemplate("paging.html.twig")->display($context);
-        // line 68
+        // line 71
         echo "       ";
         $this->displayBlock('content', $context, $blocks);
-        // line 73
+        // line 76
         echo "       ";
         $this->env->loadTemplate("paging.html.twig")->display($context);
-        // line 74
+        // line 77
         echo "    </div>
     <!-- end .grid_19 -->
     <div class=\"clear\"></div>
@@ -128,10 +131,10 @@ pageTracker._trackPageview();
 </html>";
     }
 
-    // line 68
+    // line 71
     public function block_content($context, array $blocks = array())
     {
-        // line 69
+        // line 72
         echo "        <div id=\"content\">
             Content of the page...
         </div>
