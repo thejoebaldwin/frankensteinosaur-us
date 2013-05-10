@@ -1,0 +1,14 @@
+ { 
+   "posts": [
+      {%    for post in posts  %}
+            {
+            "title": "{{ post.path }}",
+            "published": "blerg",
+            "contents": "{{ post.contents | raw}}",
+            "permalink": "http: //frankensteinosaur.us/post/{{ post.path }}"
+            }
+            {% if not loop.last %},{% endif %}
+      {% endfor %}
+            ]
+}
+ 

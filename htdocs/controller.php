@@ -104,9 +104,6 @@
     $db = new Database();
     $page = getPage($db,'',$index);
     $sql = "SELECT * FROM post WHERE published = 1 ORDER BY created DESC LIMIT " . $start_index . "," . $end_index . ";";
-   
-  
-
     
     $result  = $db->Query($sql);
     $count = 0;
@@ -130,6 +127,49 @@
                                                      'previous_index' => $previous_index,
                                                      'page' => $page,
                                                      'tags' => getTags()));
+  }
+ 
+ 
+  function jsonAction($twig, $words)
+  {
+    
+    $tag = '';
+    
+ 
+    if (count($words) > 3)
+    {
+        $tag = $words[count($words) - 2];
+    }
+    else
+    {
+        $tag = $words[count($words) - 1];
+    }
+    
+    
+    $tag = str_replace('%20', ' ', $tag);
+    
+    $db = new Database();
+    
+    
+    $sql = "SELECT * FROM post WHERE published = 1 AND tags like '%" . $tag . "%' ORDER BY created DESC";
+     
+   
+    $result  = $db->Query($sql);
+    $count = 0;
+    $posts = array();
+    foreach($result as $row)
+    {
+        $post = new Post();
+        $post->title = $row['title'];
+        $post->path = $row['path'];
+        $text = file_get_contents('./post/' .  $post->path . '.markdown', true);
+        $html = urlencode (Markdown($text));
+        $post->contents = $html;
+        array_push($posts, $post);
+        $count++;
+    }
+    
+    echo $twig->render('posts.json.twig', array('posts'=> $posts));
   }
   
   function tagAction($twig, $words, $index)
@@ -215,6 +255,9 @@
         }
         elseif ($words[count($words) - 2] == 'tag') {
           tagAction($twig,$words, 1);
+        }
+        elseif ($words[count($words) - 2] == 'json') {
+            jsonAction($twig,$words);
         }
         else {
           homeAction($twig, 1);
