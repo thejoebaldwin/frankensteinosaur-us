@@ -20,7 +20,7 @@
     {
         $post->title = $row['title'];
         $post->path = $row['path'];
-        $post->tags = $row['tags'];
+        $post->tags =  explode( ',' , $row['tags']);
         $text = file_get_contents('./post/' .  $post->path . '.markdown', true);
         $html =  Markdown($text);
         $post->contents = $html;
@@ -34,7 +34,7 @@
   
   function getTags()
   {
-    $tags = array("3d","blog meta","design","education","c#","c++","vb.net","ios","sharepoint","htg","github","return2-sender","tech","unity","coding","raspberry pi");
+    $tags = array("3d","blog meta","design","education","c#","c++","vb.net","ios","sharepoint","htg","github","return2-sender","sterts","tech","unity","coding","raspberry pi");
     return $tags;
   }
   
@@ -116,6 +116,7 @@
         $text = file_get_contents('./post/' .  $post->path . '.markdown', true);
         $html =  Markdown($text);
         $post->contents = $html;
+        $post->tags =  explode( ',' , $row['tags']);
         array_push($posts, $post);
         $count++;
     }
@@ -127,6 +128,12 @@
                                                      'previous_index' => $previous_index,
                                                      'page' => $page,
                                                      'tags' => getTags()));
+  }
+ 
+ 
+  function testAction($twig, $index)
+  {
+    echo $twig->render('test.html.twig', array('test'=>'test'));
   }
  
  
@@ -163,7 +170,8 @@
         $post->title = $row['title'];
         $post->path = $row['path'];
         $text = file_get_contents('./post/' .  $post->path . '.markdown', true);
-        $html = urlencode (Markdown($text));
+        $html = urlencode(Markdown($text));
+        //$html = Markdown($text);
         $post->contents = $html;
         array_push($posts, $post);
         $count++;
@@ -213,6 +221,7 @@
         $post = new Post();
         $post->title = $row['title'];
         $post->path = $row['path'];
+        $post->tags =  explode( ',' , $row['tags']);
         $text = file_get_contents('./post/' .  $post->path . '.markdown', true);
         $html =  Markdown($text);
         $post->contents = $html;
@@ -258,6 +267,9 @@
         }
         elseif ($words[count($words) - 2] == 'json') {
             jsonAction($twig,$words);
+        }
+        elseif ($words[count($words) - 1] == 'test') {
+            testAction($twig,$words);
         }
         else {
           homeAction($twig, 1);

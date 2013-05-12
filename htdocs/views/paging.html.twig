@@ -1,4 +1,12 @@
+
+
+
     {% if action != 'post' %}
+        
+        {% if page.page_count is not defined %}
+            
+            
+        {% else %}
     <div class="grid_19 btn-group" style='text-align:left; margin-top:20px;margin-bottom:20px;'  >
             {% if page.start_page > 1 %}
                  {% if action == '/' %}
@@ -35,3 +43,4 @@
            {% endfor %}
       </div>
      {% endif %}
+{% endif %}

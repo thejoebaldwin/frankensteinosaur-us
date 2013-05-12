@@ -57,13 +57,22 @@
             <iframe height="70px" width="150px" scrolling="no" src='http://sterts.humboldttechgroup.com/thejoebaldwin/last'></iframe>
             
       
-        <div style='text-align:right;margin-top:10px;'>
-		           {%    for tag in tags  %}
-              <a href='/tag/{{tag}}'>{{tag}}</a>
-
-          {% endfor %}
-		      
+        <div style='text-align:right;margin-top:10px;margin-bottom:5px;'>
+           {%    for tag in tags  %}
+                  <a href='/tag/{{tag}}'>{{tag}}</a>
+           {% endfor %}
         </div>
+       <script>
+var CoinWidget_Config = {
+	address : '12icaRkFcc5y7rSDYfeNEKCvk13QDLr3og',
+    counter : 'hide'
+};
+</script>
+       <script src="http://c.coinwidget.com/widget.js"></script>
+  
+       
+        
+   
     </div>
     <!-- end .grid_5 -->
     <div class="grid_19" class='text-align:left;' >

@@ -33,19 +33,6 @@ class __TwigTemplate_a4a47adeab3300f6c5402772b5ba2253 extends Twig_Template
         if (isset($context["posts"])) { $_posts_ = $context["posts"]; } else { $_posts_ = null; }
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($_posts_);
-        $context['loop'] = array(
-          'parent' => $context['_parent'],
-          'index0' => 0,
-          'index'  => 1,
-          'first'  => true,
-        );
-        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
-            $length = count($context['_seq']);
-            $context['loop']['revindex0'] = $length - 1;
-            $context['loop']['revindex'] = $length;
-            $context['loop']['length'] = $length;
-            $context['loop']['last'] = 1 === $length;
-        }
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 7
             echo "     <div id=\"content\">
@@ -62,21 +49,52 @@ class __TwigTemplate_a4a47adeab3300f6c5402772b5ba2253 extends Twig_Template
             if (isset($context["post"])) { $_post_ = $context["post"]; } else { $_post_ = null; }
             echo $this->getAttribute($_post_, "contents");
             echo "
-                        ";
+                        tags:";
             // line 10
-            $this->env->loadTemplate("tags.html.twig")->display($context);
+            if (isset($context["post"])) { $_post_ = $context["post"]; } else { $_post_ = null; }
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($_post_, "tags"));
+            $context['loop'] = array(
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            );
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
+            foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+                echo "<a href='/tag/";
+                if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
+                echo twig_escape_filter($this->env, $_tag_, "html", null, true);
+                echo "'>";
+                if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
+                echo twig_escape_filter($this->env, $_tag_, "html", null, true);
+                echo "</a>";
+                if (isset($context["loop"])) { $_loop_ = $context["loop"]; } else { $_loop_ = null; }
+                if ((!$this->getAttribute($_loop_, "last"))) {
+                    echo ",";
+                }
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+            $context = array_merge($_parent, array_intersect_key($context, $_parent));
             // line 11
             echo "     </div>
  
  ";
-            ++$context['loop']['index0'];
-            ++$context['loop']['index'];
-            $context['loop']['first'] = false;
-            if (isset($context['loop']['length'])) {
-                --$context['loop']['revindex0'];
-                --$context['loop']['revindex'];
-                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-            }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);

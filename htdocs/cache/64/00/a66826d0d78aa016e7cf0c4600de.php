@@ -74,43 +74,52 @@ class __TwigTemplate_6400a66826d0d78aa016e7cf0c4600de extends Twig_Template
             <iframe height=\"70px\" width=\"150px\" scrolling=\"no\" src='http://sterts.humboldttechgroup.com/thejoebaldwin/last'></iframe>
             
       
-        <div style='text-align:right;margin-top:10px;'>
-\t\t           ";
+        <div style='text-align:right;margin-top:10px;margin-bottom:5px;'>
+           ";
         // line 61
         if (isset($context["tags"])) { $_tags_ = $context["tags"]; } else { $_tags_ = null; }
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($_tags_);
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
             // line 62
-            echo "              <a href='/tag/";
+            echo "                  <a href='/tag/";
             if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
             echo twig_escape_filter($this->env, $_tag_, "html", null, true);
             echo "'>";
             if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
             echo twig_escape_filter($this->env, $_tag_, "html", null, true);
             echo "</a>
-
-          ";
+           ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 65
-        echo "\t\t      
-        </div>
+        // line 64
+        echo "        </div>
+       <script>
+var CoinWidget_Config = {
+\taddress : '12icaRkFcc5y7rSDYfeNEKCvk13QDLr3og',
+    counter : 'hide'
+};
+</script>
+       <script src=\"http://c.coinwidget.com/widget.js\"></script>
+  
+       
+        
+   
     </div>
     <!-- end .grid_5 -->
     <div class=\"grid_19\" class='text-align:left;' >
        ";
-        // line 70
+        // line 79
         $this->env->loadTemplate("paging.html.twig")->display($context);
-        // line 71
+        // line 80
         echo "       ";
         $this->displayBlock('content', $context, $blocks);
-        // line 76
+        // line 85
         echo "       ";
         $this->env->loadTemplate("paging.html.twig")->display($context);
-        // line 77
+        // line 86
         echo "    </div>
     <!-- end .grid_19 -->
     <div class=\"clear\"></div>
@@ -131,10 +140,10 @@ pageTracker._trackPageview();
 </html>";
     }
 
-    // line 71
+    // line 80
     public function block_content($context, array $blocks = array())
     {
-        // line 72
+        // line 81
         echo "        <div id=\"content\">
             Content of the page...
         </div>
