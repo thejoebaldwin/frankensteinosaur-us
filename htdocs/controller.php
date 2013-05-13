@@ -103,7 +103,7 @@
     
     $db = new Database();
     $page = getPage($db,'',$index);
-    $sql = "SELECT * FROM post WHERE published = 1 ORDER BY created DESC LIMIT " . $start_index . "," . $end_index . ";";
+    $sql = "SELECT * FROM post WHERE published = 1 ORDER BY created DESC LIMIT " . $start_index . "," . $post_per_page . ";";
     
     $result  = $db->Query($sql);
     $count = 0;

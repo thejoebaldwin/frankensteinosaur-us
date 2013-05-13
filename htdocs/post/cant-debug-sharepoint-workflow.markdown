@@ -1,17 +1,3 @@
----
-author: Joe-Baldwin
-comments: true
-date: 2008-09-19 11:33:07
-layout: post
-slug: cant-debug-sharepoint-workflow
-title: Can't Debug SharePoint Workflow
-wordpress_id: 22
-categories:
-- Workflow
-tags:
-- Debugging
-- Development
----
 
 This is probably the toughest thing I've run up against yet with SharePoint. I won't share how much time was involved. *shudder*
 

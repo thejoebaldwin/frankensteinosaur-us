@@ -1,16 +1,3 @@
----
-author: Joe-Baldwin
-comments: true
-date: 2008-02-27 11:34:58
-layout: post
-slug: caml-with-multi-value-lookup-fields
-title: CAML with Multi-Value Lookup Fields
-wordpress_id: 28
-categories:
-- Customization
-tags:
-- CAML
----
 
 When using the WSS 3.0 Web Services to access your lists, you might have a list that contains a Multi-Value Lookup Field; that is to say, a Lookup Field that has the "Allow Multiple Values" option checked. These types of fields are a bit shaky in SharePoint, although some quirks have been addressed in the recent [Service Pack 1](http://www.microsoft.com/downloads/details.aspx?FamilyId=4191A531-A2E9-45E4-B71E-5B0B17108BD2&displaylang=en) upgrade. A regular CAML query to insert a new item would look something like this:
 

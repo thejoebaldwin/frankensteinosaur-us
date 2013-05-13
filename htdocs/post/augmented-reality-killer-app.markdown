@@ -1,14 +1,3 @@
----
-author: admin
-comments: true
-date: 2009-02-19 22:41:48
-layout: post
-slug: augmented-reality-killer-app
-title: Augmented Reality Killer App
-wordpress_id: 475
-categories:
-- Augmented Reality
----
 
 I was just talking to my friend and fellow Metaverse visionary about Street Fighter IV and was about to joke with him that I preferred the "Augmented Reality" version of Street Fighter where everyone had health bars over their heads and actually got back up when you delivered a dragon uppercut. I decided to write this instead, since I needed a segue and the joke really wasn't that funny. So what about augmented reality? Is it the poor man's/quitter's version of that long promised and never delivered technology of the 90's?
 
