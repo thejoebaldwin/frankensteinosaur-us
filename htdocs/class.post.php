@@ -14,6 +14,8 @@ class Post
     
     public $contents = '';
     
+
+    
     // method declaration
     public function displayTitle() {
         echo $this->Title;

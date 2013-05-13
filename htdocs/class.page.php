@@ -11,6 +11,7 @@ class Page
     public $title = '';
     public $post_per_page = 5;
     public $pages_to_display = 10;
+    public $tags = '';
     
     // method declaration
     public function displayTitle() {

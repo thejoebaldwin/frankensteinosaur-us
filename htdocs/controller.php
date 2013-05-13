@@ -108,11 +108,13 @@
     $result  = $db->Query($sql);
     $count = 0;
     $posts = array();
+    $tags = getTags();
     foreach($result as $row)
     {
         $post = new Post();
         $post->title = $row['title'];
         $post->path = $row['path'];
+        $post->created = $row['created'];
         $text = file_get_contents('./post/' .  $post->path . '.markdown', true);
         $html =  Markdown($text);
         $post->contents = $html;
@@ -122,12 +124,13 @@
     }
     $next_index = $index + 1;
     $previous_index = $index - 1;
+    
     echo $twig->render('main/index.html.twig', array('posts' => $posts,
                                                      'next_index' => $next_index,
                                                      'action' => '/',
                                                      'previous_index' => $previous_index,
                                                      'page' => $page,
-                                                     'tags' => getTags()));
+                                                     'tags' => $tags));
   }
  
  
@@ -152,7 +155,7 @@
         $tag = $words[count($words) - 1];
     }
     
-    
+   
     $tag = str_replace('%20', ' ', $tag);
     
     $db = new Database();
@@ -169,6 +172,7 @@
         $post = new Post();
         $post->title = $row['title'];
         $post->path = $row['path'];
+	 $post->created = $row['created'];
         $text = file_get_contents('./post/' .  $post->path . '.markdown', true);
         $html = urlencode(Markdown($text));
         //$html = Markdown($text);

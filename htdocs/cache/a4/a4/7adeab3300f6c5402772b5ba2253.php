@@ -49,8 +49,21 @@ class __TwigTemplate_a4a47adeab3300f6c5402772b5ba2253 extends Twig_Template
             if (isset($context["post"])) { $_post_ = $context["post"]; } else { $_post_ = null; }
             echo $this->getAttribute($_post_, "contents");
             echo "
-                        tags:";
+                         <div style=\"color:black;font-size: small;\"> published: ";
             // line 10
+            if (isset($context["post"])) { $_post_ = $context["post"]; } else { $_post_ = null; }
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($_post_, "created"), "m/d/y h:m"), "html", null, true);
+            if (isset($context["post"])) { $_post_ = $context["post"]; } else { $_post_ = null; }
+            $context["hour"] = twig_date_format_filter($this->env, $this->getAttribute($_post_, "created"), "H");
+            if (isset($context["hour"])) { $_hour_ = $context["hour"]; } else { $_hour_ = null; }
+            if (($_hour_ > 12)) {
+                echo "pm";
+            } else {
+                echo "am";
+            }
+            echo "</div>
+                        tags:";
+            // line 11
             if (isset($context["post"])) { $_post_ = $context["post"]; } else { $_post_ = null; }
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($_post_, "tags"));
@@ -91,7 +104,7 @@ class __TwigTemplate_a4a47adeab3300f6c5402772b5ba2253 extends Twig_Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
             $context = array_merge($_parent, array_intersect_key($context, $_parent));
-            // line 11
+            // line 12
             echo "     </div>
  
  ";
@@ -99,7 +112,7 @@ class __TwigTemplate_a4a47adeab3300f6c5402772b5ba2253 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 14
+        // line 15
         echo "
 ";
     }

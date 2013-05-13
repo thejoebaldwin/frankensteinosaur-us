@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteOptions Inherit 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond  %{REQUEST_URI} !controller.php
+RewriteCond  %{REQUEST_URI} !/css
+RewriteCond  %{REQUEST_URI} !/js/
+RewriteCond  %{REQUEST_URI} !/images
+RewriteCond  %{REQUEST_URI} !/resources
+RewriteCond  %{REQUEST_URI} !/robots.txt
+RewriteRule (.*) /controller.php/$1 [L] 

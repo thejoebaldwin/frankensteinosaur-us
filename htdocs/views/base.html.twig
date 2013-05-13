@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="all" />
   <link rel="stylesheet" href="/css/bootstrap-responsive.css" type="text/css" media="all" />
+   <link rel="stylesheet" href="/css/widget.css" type="text/css" media="all" />
+  
   <title>Sterts - Home</title>
   <link rel="shortcut icon" href="/favicon.ico" />
   <script src="/js/jquery-1.7.2.min.js"></script>
@@ -62,16 +64,25 @@
                   <a href='/tag/{{tag}}'>{{tag}}</a>
            {% endfor %}
         </div>
-       <script>
+<div style='margin-right:40px;'>
+    <span style='font-size: small;'>Donate:</span>
+<script>
 var CoinWidget_Config = {
 	address : '12icaRkFcc5y7rSDYfeNEKCvk13QDLr3og',
-    counter : 'hide'
+    counter : 'hide',
+    text: '       '
 };
-</script>
-       <script src="http://c.coinwidget.com/widget.js"></script>
-  
-       
-        
+</script><script src="/js/widget.js"></script>
+     </div>  
+
+<style type="text/css">
+    .COINWIDGET_BUTTON a i {
+height:64px;
+width: 64px;
+background: url("/images/bitcoin.png") no-repeat center center;
+}
+
+</style>
    
     </div>
     <!-- end .grid_5 -->
@@ -90,10 +101,14 @@ var CoinWidget_Config = {
  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 <footer>
 </footer>
+
+
+
  <script type="text/javascript"> 
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script> 
+</script>
+ 
 <script type="text/javascript"> 
 try {
 var pageTracker = _gat._getTracker("UA-7711572-16");

@@ -3,6 +3,7 @@
  <div id="content" class="content">
         <h1>{{ post.title }}</h1>
         {{ html|raw }}
+        <div style="color:black;font-size: small;margin:0;padding:0;"> published: {{ post.created |  date("m/d/y h:m") }}{% set hour = post.created |  date("H") %}{% if hour > 12 %}pm{% else %}am{% endif %}</div>
         tags:{% for tag in post.tags  %}<a href='/tag/{{tag}}'>{{tag}}</a>{% if not loop.last %},{% endif %}{% endfor %}
  </div> 
 {% endblock %}

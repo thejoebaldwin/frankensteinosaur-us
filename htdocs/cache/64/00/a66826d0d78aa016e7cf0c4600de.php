@@ -32,6 +32,8 @@ class __TwigTemplate_6400a66826d0d78aa016e7cf0c4600de extends Twig_Template
   <link rel=\"stylesheet\" href=\"/css/style.css\" />
   <link rel=\"stylesheet\" href=\"/css/bootstrap.min.css\" type=\"text/css\" media=\"all\" />
   <link rel=\"stylesheet\" href=\"/css/bootstrap-responsive.css\" type=\"text/css\" media=\"all\" />
+   <link rel=\"stylesheet\" href=\"/css/widget.css\" type=\"text/css\" media=\"all\" />
+  
   <title>Sterts - Home</title>
   <link rel=\"shortcut icon\" href=\"/favicon.ico\" />
   <script src=\"/js/jquery-1.7.2.min.js\"></script>
@@ -76,12 +78,12 @@ class __TwigTemplate_6400a66826d0d78aa016e7cf0c4600de extends Twig_Template
       
         <div style='text-align:right;margin-top:10px;margin-bottom:5px;'>
            ";
-        // line 61
+        // line 63
         if (isset($context["tags"])) { $_tags_ = $context["tags"]; } else { $_tags_ = null; }
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($_tags_);
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 62
+            // line 64
             echo "                  <a href='/tag/";
             if (isset($context["tag"])) { $_tag_ = $context["tag"]; } else { $_tag_ = null; }
             echo twig_escape_filter($this->env, $_tag_, "html", null, true);
@@ -94,32 +96,41 @@ class __TwigTemplate_6400a66826d0d78aa016e7cf0c4600de extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 64
+        // line 66
         echo "        </div>
-       <script>
+<div style='margin-right:40px;'>
+    <span style='font-size: small;'>Donate:</span>
+<script>
 var CoinWidget_Config = {
 \taddress : '12icaRkFcc5y7rSDYfeNEKCvk13QDLr3og',
-    counter : 'hide'
+    counter : 'hide',
+    text: '       '
 };
-</script>
-       <script src=\"http://c.coinwidget.com/widget.js\"></script>
-  
-       
-        
+</script><script src=\"/js/widget.js\"></script>
+     </div>  
+
+<style type=\"text/css\">
+    .COINWIDGET_BUTTON a i {
+height:64px;
+width: 64px;
+background: url(\"/images/bitcoin.png\") no-repeat center center;
+}
+
+</style>
    
     </div>
     <!-- end .grid_5 -->
     <div class=\"grid_19\" class='text-align:left;' >
        ";
-        // line 79
+        // line 90
         $this->env->loadTemplate("paging.html.twig")->display($context);
-        // line 80
+        // line 91
         echo "       ";
         $this->displayBlock('content', $context, $blocks);
-        // line 85
+        // line 96
         echo "       ";
         $this->env->loadTemplate("paging.html.twig")->display($context);
-        // line 86
+        // line 97
         echo "    </div>
     <!-- end .grid_19 -->
     <div class=\"clear\"></div>
@@ -127,10 +138,14 @@ var CoinWidget_Config = {
  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href=\"http://browsehappy.com/\">Upgrade to a different browser</a> or <a href=\"http://www.google.com/chromeframe/?redirect=true\">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 <footer>
 </footer>
+
+
+
  <script type=\"text/javascript\"> 
 var gaJsHost = ((\"https:\" == document.location.protocol) ? \"https://ssl.\" : \"http://www.\");
 document.write(unescape(\"%3Cscript src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));
-</script> 
+</script>
+ 
 <script type=\"text/javascript\"> 
 try {
 var pageTracker = _gat._getTracker(\"UA-7711572-16\");
@@ -140,10 +155,10 @@ pageTracker._trackPageview();
 </html>";
     }
 
-    // line 80
+    // line 91
     public function block_content($context, array $blocks = array())
     {
-        // line 81
+        // line 92
         echo "        <div id=\"content\">
             Content of the page...
         </div>
