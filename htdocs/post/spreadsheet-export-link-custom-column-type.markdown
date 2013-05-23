@@ -1,17 +1,3 @@
----
-author: Joe-Baldwin
-comments: true
-date: 2008-02-29 11:34:24
-layout: post
-slug: spreadsheet-export-link-custom-column-type
-title: Spreadsheet Export Link Custom Column Type
-wordpress_id: 26
-categories:
-- Customization
-tags:
-- Custom Field Types
-- Excel Export
----
 
 Recently at a client there was a need to export multiple spreadsheets of a list, but each with a different filter. For one or two filters, the easy solution would be to create a different view for each filter of the list, navigate to that view and click on the "Export to Spreadsheet" option. When you go past four or more, it quickly becomes tedious, especially when these spreadsheets are meant to be as current as possible. My first solution to this was to add a Link Webpart to a page, and each link would export one of the views of the list. You can read about how to format the link a spreadsheet export link [here](http://weblogs.asp.net/wkriebel/archive/2005/08/22/LinkToExportToSpreadsheet.aspx). Although it was much easier for the user to generate these spreadsheets now that they were all in one place, it required a great deal of additional knowledge to maintain, in that the GUIDs for the view and the list need to be determined and added to the link.
 

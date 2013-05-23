@@ -3,3 +3,5 @@ I Started digging into 3DS Max these last 2 weeks as part of my quest to strengt
 
 This short video clip took 30 minutes to render on a machine with 8GB of memory and an Intel Xeon (crazy, but hi-def looks so nice). 
 
+<iframe width="560" height="315" src="http://www.youtube.com/embed/UDMHg3fANJA?list=UULEgYLmvZVJkJjBDoQim8kw" frameborder="0" allowfullscreen></iframe>
+

@@ -1,6 +1,7 @@
 RewriteEngine On
 RewriteOptions Inherit 
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond  %{REQUEST_URI} !favicon.ico
 RewriteCond  %{REQUEST_URI} !controller.php
 RewriteCond  %{REQUEST_URI} !/css
 RewriteCond  %{REQUEST_URI} !/js/

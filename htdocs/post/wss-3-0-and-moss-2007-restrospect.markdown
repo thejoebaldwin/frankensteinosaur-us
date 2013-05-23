@@ -1,18 +1,3 @@
----
-author: Joe-Baldwin
-comments: true
-date: 2009-11-13 11:26:42
-layout: post
-slug: wss-3-0-and-moss-2007-restrospect
-title: WSS 3.0 and MOSS 2007 Restrospect
-wordpress_id: 10
-categories:
-- MOSS 2007
-- SharePoint 2010
-tags:
-- MOSS 2007
-- WSS 3.0
----
 
 
 

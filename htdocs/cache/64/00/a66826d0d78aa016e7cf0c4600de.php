@@ -73,7 +73,7 @@ class __TwigTemplate_6400a66826d0d78aa016e7cf0c4600de extends Twig_Template
             <a href=\"http://github.com/thejoebaldwin\" alt=\"Github\"><img src=\"/images/git_32.png\"></a>
         </div>
       
-            <iframe height=\"70px\" width=\"150px\" scrolling=\"no\" src='http://sterts.humboldttechgroup.com/thejoebaldwin/last'></iframe>
+            <iframe height=\"70px\" width=\"150px\" scrolling=\"no\" src='http://sterts.es/thejoebaldwin/last'></iframe>
             
       
         <div style='text-align:right;margin-top:10px;margin-bottom:5px;'>

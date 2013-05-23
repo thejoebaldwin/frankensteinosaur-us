@@ -46,7 +46,6 @@
     if ($page->current_page > floor($page->pages_to_display / 2))
     {
          $page->start_page = $page->current_page - floor($page->pages_to_display / 2);
-         
     }
     $page->page_count = floor(getPostCount($db, $tag) / $page->post_per_page) + 1;
     $page->end_page =   $page->start_page + $page->pages_to_display;
@@ -186,16 +185,16 @@
   
   function tagAction($twig, $words, $index)
   {
+    
     $post_per_page = 5;
     $index = intval($index);
     $page = new Page();
     $page->current_page = $index;
+  
     $start_index = $post_per_page * ($index - 1);
     
     $end_index = $start_index + $post_per_page;
     $tag = '';
-    //if($index > 1)
-    //{
     if (count($words) > 3)
     {
         $tag = $words[count($words) - 2];
@@ -204,18 +203,11 @@
     {
         $tag = $words[count($words) - 1];
     }
-    //}
-    //else
-    //{
-        //$tag = $words[count($words) - 1];
-    //}
     $tag = str_replace('%20', ' ', $tag);
-    
     $db = new Database();
     $page = getPage($db,$tag,$index);
-    
-    $sql = "SELECT * FROM post WHERE published = 1 AND tags like '%" . $tag . "%' ORDER BY created DESC LIMIT " . $start_index . "," . $end_index . ";";
-  
+    $sql = "SELECT * FROM post WHERE published = 1 AND tags like '%" . $tag . "%' ORDER BY created DESC LIMIT " . $start_index . "," . $post_per_page . ";";
+    //$sql = "SELECT * FROM post WHERE published = 1 ORDER BY created DESC LIMIT " . $start_index . "," . $post_per_page . ";";
    
     $result  = $db->Query($sql);
     $count = 0;
@@ -238,7 +230,9 @@
                                                      'next_index' => $next_index,
                                                      'action' => 'tag/' . $tag,
                                                      'previous_index' => $previous_index,
+                                                     'page' => $page,
                                                      'tags' => getTags()));
+    
   }
 
   function goController()
@@ -267,7 +261,7 @@
           postAction($twig,$words);
         }
         elseif ($words[count($words) - 2] == 'tag') {
-          tagAction($twig,$words, 1);
+          tagAction($twig,$words, 0);
         }
         elseif ($words[count($words) - 2] == 'json') {
             jsonAction($twig,$words);

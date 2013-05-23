@@ -1,17 +1,3 @@
----
-author: Joe-Baldwin
-comments: true
-date: 2009-03-13 11:29:15
-layout: post
-slug: wss-3-0-licensing-in-one-sentence
-title: WSS 3.0 Licensing in One Sentence
-wordpress_id: 18
-categories:
-- WSS 3.0
-tags:
-- Licensing
-- WSS 3.0
----
 
 I gave my first conference presentation this week at the [Brainstorm 10.0](http://www.onalaska.k12.wi.us/brainstorm/) event in Wisconsin Dells; one of the hooks of the presentation was that if you have Windows Server 2003 (or 2008) running somewhere in your network, then you already own SharePoint.
 

@@ -1,18 +1,3 @@
----
-author: Joe-Baldwin
-comments: true
-date: 2009-12-12 10:50:44
-layout: post
-slug: sharepoint-single-sign-on-part-i-the-myth
-title: 'SharePoint Single Sign-On Part I: The Myth'
-wordpress_id: 7
-categories:
-- MOSS 2007
-- Single Sign-On
-tags:
-- MOSS 2007
-- SSO
----
 
 Single Sign-On with SharePoint had always been a somewhat mystical subject. I hadn't had any clients request it and there isn't a lot of information on the subject other than the initial configuration of the MOSS Single Sign-On service. When talking about Single Sign-On it was often in the context of the OWA WebParts, and getting inbox and calendar information. Once I found out that the OWA webparts were nothing but glorified iFrames, Single Sign-On grew in both mystery and prestige. Faced with a client that was not satisfied with the OWA WebParts and the desire to not sign in twice to authenticate to Outlook Web Access, I was finally able to pursue my quest for the truth about SharePoint Single Sign On.
 
@@ -31,69 +16,51 @@ The second point, and a slightly more uncomfortable one, is that at some point, 
 
 Onto the "dirty code tricks" I promised earlier. Here is the basic code that you will need to get the stored credentials out of the SSO database:
 
-
-
-
-
-
-
-using Microsoft.SharePoint.Portal;  
-using Microsoft.SharePoint.Portal.SingleSignon;  
-using Microsoft.SharePoint.Portal.SingleSignon.Security;  
+	using Microsoft.SharePoint.Portal;  
+	using Microsoft.SharePoint.Portal.SingleSignon;  
+	using Microsoft.SharePoint.Portal.SingleSignon.Security;  
   
-public static void getCredentials(ref string username, ref string password, string sso_src)  
-{  
-string strSSOLogonFormUrl = SingleSignonLocator .GetCredentialEntryUrl(sso_src);
+	public static void getCredentials(ref string username, ref string password, string sso_src)  
+	{  
+		string strSSOLogonFormUrl = SingleSignonLocator .GetCredentialEntryUrl(sso_src);
+		//sso_src is the name of your application you gave in the SSO configuration  
+		try   
+		{  
+			ISsoProvider l_oProvider = SsoProviderFactory .GetSsoProvider();  
+			SsoCredentials l_oCredentials = l_oProvider.GetCredentials(sso_src);   
+			username = ConvertSecureStringToString(l_oCredentials.UserName);  
+			password = ConvertSecureStringToString(l_oCredentials.Password);  
+		}  
+		catch (SingleSignonException ssoe)  
+		{  
+			if (SSOReturnCodes .SSO_E_CREDS_NOT_FOUND == ssoe.LastErrorCode)  
+			{  
+				username = "";  
+				password = "";  
+			}   
+		}  
+	}
 
-
-
-
-//sso_src is the name of your application you gave in the SSO configuration  
-try   
-{  
-ISsoProvider l_oProvider = SsoProviderFactory .GetSsoProvider();  
-SsoCredentials l_oCredentials = l_oProvider.GetCredentials(sso_src);   
-username = ConvertSecureStringToString(l_oCredentials.UserName);  
-password = ConvertSecureStringToString(l_oCredentials.Password);  
-}  
-catch (SingleSignonException ssoe)  
-{  
-if (SSOReturnCodes .SSO_E_CREDS_NOT_FOUND == ssoe.LastErrorCode)  
-{  
-username = "";  
-password = "";  
-}   
-}  
-}
-
-
-
-
-public static string ConvertSecureStringToString(System.Security.SecureString pValue)  
-{  
-IntPtr lValuePointer = IntPtr.Zero;  
-string lValueAsString;  
-try  
-{  
-lValuePointer = Marshal.SecureStringToBSTR(pValue);  
-lValueAsString = Marshal.PtrToStringBSTR(lValuePointer);  
-}  
-catch (Exception ex)  
-{  
-lValueAsString = ex.Message;  
-}  
-finally  
-{  
-if (lValuePointer != IntPtr.Zero)  
-Marshal.ZeroFreeBSTR(lValuePointer);  
-}  
-return lValueAsString;  
-}
-
-
-
-
-
+	public static string ConvertSecureStringToString(System.Security.SecureString pValue)  
+	{  
+		IntPtr lValuePointer = IntPtr.Zero;  
+		string lValueAsString;  
+		try  
+		{  
+			lValuePointer = Marshal.SecureStringToBSTR(pValue);  
+			lValueAsString = Marshal.PtrToStringBSTR(lValuePointer);  
+		}  
+		catch (Exception ex)  
+		{  
+			lValueAsString = ex.Message;  
+		}  
+		finally  
+		{  
+			if (lValuePointer != IntPtr.Zero)  
+			Marshal.ZeroFreeBSTR(lValuePointer);  
+		}  
+		return lValueAsString;  
+	}
 
 
 Now comes the part that is best only talked about in the full light of day. Each application that you want to integrate with SSO is going to be a unique challenge, and it is probably not an application that you wrote... so modifying the authentication mechanism is most likely not an option. I want to tell you up front that not all applications are suitable candidates for SSO; if you have the time and resources to create a proof-of-concept completely independent of the SharePoint SSO with canned credentials, I suggest you do so. If your application uses a forms-based login, then you have a fighting chance.

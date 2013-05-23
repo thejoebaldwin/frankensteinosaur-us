@@ -1,17 +1,3 @@
----
-author: Joe-Baldwin
-comments: true
-date: 2009-03-26 11:27:20
-layout: post
-slug: twitter-workflow-as-sharepoint-middleware
-title: Twitter Workflow as SharePoint Middleware
-wordpress_id: 12
-categories:
-- Workflow
-tags:
-- Middleware
-- Twitter
----
 
 First off, let me address the fact that this post is about Twitter. Well, it's about Twitter AND SharePoint if you want to get picky. But ok, it's about Twitter, the one that's always in the news and is very trendy right now. I think it's great; I've learned a ton about SharePoint since I've started following some great SharePoint experts that I found out on [WeFollow.Com](http://wefollow.com/tag/sharepoint).
 

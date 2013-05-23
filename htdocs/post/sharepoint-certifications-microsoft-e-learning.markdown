@@ -1,16 +1,3 @@
----
-author: Joe-Baldwin
-comments: true
-date: 2009-02-26 11:31:29
-layout: post
-slug: sharepoint-certifications-microsoft-e-learning
-title: SharePoint Certifications & Microsoft E-Learning
-wordpress_id: 20
-categories:
-- Training
-tags:
-- Certification
----
 
 Just passed my [70-541](http://www.microsoft.com/learning/en/us/exams/70-541.mspx) and [70-542](http://www.microsoft.com/learning/en/us/exams/70-542.mspx), now I'm fully MCTS'ed on SharePoint Application Development. While I am sworn to secrecy on what is on those exams, I can tell you how I studied. I read:
 

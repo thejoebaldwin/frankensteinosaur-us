@@ -1,16 +1,10 @@
-
-
-
-    {% if action != 'post' %}
-        
-        {% if page.page_count is not defined %}
-            
-            
-        {% else %}
+{% if action != 'post' %}
+    {% if page.page_count is not defined %}
+    {% else %}
     <div class="grid_19 btn-group" style='text-align:left; margin-top:20px;margin-bottom:20px;'  >
             {% if page.start_page > 1 %}
                  {% if action == '/' %}
-                    <a class='btn' href='/{{ page.current_page - 1 }}'>&#171;</a>
+                   <a class='btn' href='/{{ page.current_page - 1 }}'>&#171;</a>
                 {% else %}
                    <a class='btn' href='/{{ action }}/{{ page.current_page - 1 }}'>&#171;</a>
                 {% endif %}
@@ -20,13 +14,13 @@
                 {% if action == '/' %}
                     <a class='btn btn-info' href='/{{ i }}'>{{ i }}</a>
                 {% else %}
-                   <a class='btn btn-info' href='/{{ action }}/{{ i + 1 }}'>{{ i + 1 }}</a>
+                   <a class='btn btn-info' href='/{{ action }}/{{ i }}'>{{ i  }}</a>
                 {% endif %}
             {% else %}    
                 {% if action == '/' %}
                     <a class='btn' href='/{{ i }}'>{{ i }}</a>
                 {% else %}
-                   <a class='btn' href='/{{ action }}/{{ i + 1 }}'>{{ i + 1 }}</a>
+                   <a class='btn' href='/{{ action }}/{{ i }}'>{{ i }}</a>
                 {% endif %} 
             {% endif %}
             {% if loop.last %}

@@ -1,14 +1,3 @@
----
-author: admin
-comments: true
-date: 2010-12-01 17:31:29
-layout: post
-slug: dont-break-the-chain
-title: Don't break the chain
-wordpress_id: 99
-categories:
-- Blog Meta
----
 
 -Added QR Code reading-functionality to [Poor Man's Data Plan](http://www.poormansdataplan.com) - taking a picture of a QR code and sending it via text message to Poor Man's Data Plan will return (via text message) whatever the QR is representing. *Ahem* QR CODES WITHOUT SMART PHONE DATA PLAN!
 

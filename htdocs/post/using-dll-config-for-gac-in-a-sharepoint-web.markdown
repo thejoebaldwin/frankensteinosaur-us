@@ -1,16 +1,3 @@
----
-author: Joe-Baldwin
-comments: true
-date: 2008-03-01 11:33:43
-layout: post
-slug: using-dll-config-for-gac-in-a-sharepoint-web
-title: Using dll.config for GAC in a SharePoint Web
-wordpress_id: 24
-categories:
-- Configuration
-tags:
-- Development
----
 
 When building custom SharePoint event handlers, the compiled dll is installed to the GAC and is referenced by Windows SharePoint Services.... but what if the assembly has custom attributes that require a config file? Let's say for example, that you want to store smtp information to send out emails on a list item change, and it varies from site to site. Where do you put it?
 
